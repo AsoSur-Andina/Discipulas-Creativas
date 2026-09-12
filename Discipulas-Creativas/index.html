@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ministerio de la Mujer ASA · Discípulas Creativas</title>
+<meta name="description" content="Un camino de videos y reflexiones para las hermanas de la Asociación Sur Andina." />
+<link rel="icon" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo Ministerio de la Mujer" class="logo" />
+    <div class="brand-text">
+      <h1>Ministerio de la Mujer ASA</h1>
+      <span>Asociación Sur Andina</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <span class="eyebrow">Discípulas Creativas</span>
+    <h2>Tu creatividad, al servicio del discipulado</h2>
+    <p class="lead">
+      Un camino de videos y reflexiones para que las hermanas de la Asociación Sur Andina
+      descubran su creatividad como herramienta de discipulado. Complétalo módulo a módulo
+      para cumplir tu meta de certificación.
+    </p>
+  </section>
+
+  <section class="pasos">
+    <div class="paso-card">
+      <div class="numero">1</div>
+      <h3>Regístrate</h3>
+      <p>Escribe tu nombre y elige tu distrito e iglesia.</p>
+    </div>
+    <div class="paso-card">
+      <div class="numero">2</div>
+      <h3>Mira y reflexiona</h3>
+      <p>Ve cada video y responde las preguntas de reflexión.</p>
+    </div>
+    <div class="paso-card">
+      <div class="numero">3</div>
+      <h3>Avanza</h3>
+      <p>Envía tu respuesta y desbloquea el siguiente módulo.</p>
+    </div>
+  </section>
+
+  <section class="card" id="continuar-wrap" hidden>
+    <p style="text-align:center; margin-bottom:16px;">
+      Hola de nuevo, <strong id="continuar-nombre"></strong> 👋 ¿Quieres continuar tu camino?
+    </p>
+    <div class="text-center">
+      <button class="btn btn-primary" id="btn-continuar" type="button">Continuar mi camino</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="text-center">Comienza tu camino</h2>
+    <div class="form-error" id="form-error"></div>
+    <form id="form-registro">
+      <div class="form-group">
+        <label for="input-nombre">Tu nombre completo</label>
+        <input type="text" id="input-nombre" name="nombre" placeholder="Ej: María Fernanda Rojas" required />
+      </div>
+      <div class="form-group">
+        <label for="select-distrito">Tu distrito</label>
+        <select id="select-distrito" name="distrito" required>
+          <option value="">Selecciona tu distrito…</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="select-iglesia">Tu iglesia o grupo</label>
+        <select id="select-iglesia" name="iglesia" required disabled>
+          <option value="">Primero selecciona tu distrito</option>
+        </select>
+        <p class="form-hint">Si tu iglesia no aparece en la lista, avisa a tu líder de distrito.</p>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" id="btn-comenzar">Comenzar mi camino</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="preguntas" style="max-width:700px; margin: 0 auto 50px;">
+    <h2 class="text-center" style="margin-bottom:16px;">Preguntas frecuentes</h2>
+    <div class="card" style="text-align:left;">
+      <h3>¿Necesito contraseña?</h3>
+      <p>No. Solo escribe tu nombre y selecciona tu distrito e iglesia. Si ya empezaste antes desde este
+      mismo celular o computador, te ofreceremos continuar automáticamente.</p>
+      <h3>¿Puedo continuar desde otro dispositivo?</h3>
+      <p>Sí. Ingresa con el mismo nombre y la misma iglesia y retomarás tu progreso.</p>
+      <h3>¿Cómo sé si ya cumplí la meta?</h3>
+      <p>Cuando completes todos los módulos verás un mensaje de camino terminado, y tu líder podrá verlo
+      también en el panel de seguimiento.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Ministerio de la Mujer · Asociación Sur Andina (ASA)
+</footer>
+
+<!-- Firebase (SDK compat, sin necesidad de paso de compilación) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/data-distritos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

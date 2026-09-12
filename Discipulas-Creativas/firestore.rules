@@ -1,0 +1,37 @@
+rules_version = '2';
+
+// Reglas de seguridad de Firestore para "Discípulas Creativas".
+// Cópialas en Firebase Console → Firestore Database → Reglas → Publicar.
+//
+// Diseño (simplificado a propósito porque las damas NO inician sesión,
+// tal como pediste — solo escriben su nombre):
+//  - Cualquiera puede crear su registro y guardar su propio progreso
+//    (igual que el sitio original, sin contraseña de dama).
+//  - Solo una administradora que inició sesión (Firebase Auth) puede
+//    LISTAR a todas las damas para el panel de seguimiento.
+//  - Cualquiera puede leer UN documento si conoce su ID exacto (necesario
+//    para que cada dama recupere su propio progreso desde su dispositivo).
+//
+// Nota de seguridad: como no hay contraseña por dama, en teoría alguien con
+// conocimientos técnicos podría editar datos ajenos llamando a Firestore
+// directamente. Para un ministerio interno esto normalmente es un riesgo
+// aceptable (igual que el sitio original), pero si más adelante quieres más
+// seguridad, se puede migrar a que cada dama inicie sesión con Firebase Auth.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /damas/{damaId} {
+      allow get: if true;
+      allow list: if request.auth != null;
+
+      allow create: if request.resource.data.keys().hasAll(['nombre', 'distrito', 'iglesia'])
+                    && request.resource.data.nombre is string
+                    && request.resource.data.nombre.size() > 0;
+
+      allow update: if true;
+
+      allow delete: if request.auth != null;
+    }
+  }
+}

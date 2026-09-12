@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acceso administrador · Ministerio de la Mujer ASA</title>
+<link rel="icon" href="../assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="../assets/img/logo.png" alt="Logo Ministerio de la Mujer" class="logo" />
+    <div class="brand-text">
+      <h1>Ministerio de la Mujer ASA</h1>
+      <span>Panel de administrador</span>
+    </div>
+  </div>
+  <a href="../index.html" class="btn btn-secondary btn-small">← Volver al sitio</a>
+</header>
+
+<main class="admin-login-wrap">
+  <div class="card" style="max-width:400px;">
+    <h2 class="text-center">Acceso de administrador</h2>
+    <p class="text-center" style="color:var(--texto-suave); font-size:0.9rem; margin-top:-8px;">
+      Solo para líderes autorizadas
+    </p>
+    <div class="form-error" id="form-error"></div>
+    <form id="form-login">
+      <div class="form-group">
+        <label for="input-email">Correo</label>
+        <input type="email" id="input-email" required autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label for="input-password">Contraseña</label>
+        <input type="password" id="input-password" required autocomplete="current-password" />
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" id="btn-login">Entrar</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+<script src="../js/firebase-config.js"></script>
+<script src="../js/admin-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Módulo · Ministerio de la Mujer ASA</title>
+<link rel="icon" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo Ministerio de la Mujer" class="logo" />
+    <div class="brand-text">
+      <h1>Ministerio de la Mujer ASA</h1>
+      <span>Discípulas Creativas</span>
+    </div>
+  </div>
+  <a href="modulos.html" class="btn btn-secondary btn-small">← Mis módulos</a>
+</header>
+
+<main class="container">
+
+  <div id="cargando" class="loading-screen">
+    <span class="spinner"></span> Cargando módulo…
+  </div>
+
+  <div id="contenido-modulo" class="hidden">
+
+    <div class="modulo-titulo-row">
+      <div>
+        <span class="progreso-badge" id="modulo-contador"></span>
+        <h2 id="modulo-titulo" style="margin:4px 0 0;"></h2>
+      </div>
+    </div>
+
+    <div class="video-wrap">
+      <iframe id="video-iframe" src="" title="Video del módulo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="reflexion-card">
+      <h2>Tu reflexión</h2>
+      <div class="exito-msg" id="exito-msg"></div>
+      <form id="form-reflexion">
+        <div id="preguntas-wrap"></div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" id="btn-enviar-reflexion">Enviar respuesta</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="nav-modulos" id="nav-modulos"></div>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  Ministerio de la Mujer · Asociación Sur Andina (ASA)
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/modulos-data.js"></script>
+<script src="js/modulo.js"></script>
+</body>
+</html>
